@@ -7,7 +7,7 @@ import os
 
 TOKEN = os.environ.get('TOKEN')
 
-POST_ID = 857600054323445781
+POST_ID = os.environ.get('POST_ID')
 
 ROLES = {
     '<:refrigerator:857595228923232257>': 857568459018076211,
