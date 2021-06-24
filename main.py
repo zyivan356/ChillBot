@@ -7,7 +7,7 @@ import os
 
 TOKEN = os.environ.get('TOKEN')
 
-POST_ID = os.environ.get('POST_ID')
+POST_ID = 857600054323445781
 
 ROLES = {
     '<:refrigerator:857595228923232257>': 857568459018076211,
@@ -23,7 +23,7 @@ ROLES = {
 
 EXCROLES = ()
 
-MAX_ROLES_PER_USER = os.environ.get('MAX_ROLES_PER_USER')
+MAX_ROLES_PER_USER = 1
 
 #script
 
