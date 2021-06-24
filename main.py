@@ -35,7 +35,7 @@ client = discord.Client(intents=intents)
 
 class MyClient(discord.Client):
     async def on_ready(self):
-        print('Logged on as {0}!'.format(self.user))
+        print('Бот {0} запущен!'.format(self.user))
 
     async def on_raw_reaction_add(self, payload):
         if payload.message_id == POST_ID:
@@ -50,13 +50,13 @@ class MyClient(discord.Client):
 
                 if (len([i for i in member.roles if i.id not in EXCROLES]) <= MAX_ROLES_PER_USER):
                     await member.add_roles(role)
-                    print('[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
+                    print('[Успешно] Пользователь {0.display_name} получил роль {1.name}'.format(member, role))
                 else:
                     await message.remove_reaction(payload.emoji, member)
-                    print('[ERROR] Too many roles for user {0.display_name}'.format(member))
+                    print('[Ошибка] Слшком много ролей для пользователя {0.display_name}'.format(member))
 
             except KeyError as e:
-                print('[ERROR] KeyError, no role found for ' + emoji)
+                print('[Ошибка] не найдена роль для ' + emoji)
             except Exception as e:
                 print(repr(e))
 
@@ -71,10 +71,10 @@ class MyClient(discord.Client):
             role = utils.get(message.guild.roles, id=ROLES[emoji])
 
             await member.remove_roles(role)
-            print('[SUCCESS] Role {1.name} has been remove for user {0.display_name}'.format(member, role))
+            print('[Успешно] Роль {1.name} была убрана с пользователя {0.display_name}'.format(member, role))
 
         except KeyError as e:
-            print('[ERROR] KeyError, no role found for ' + emoji)
+            print('[Ошибка] не найдена роль для' + emoji)
         except Exception as e:
             print(repr(e))
 
