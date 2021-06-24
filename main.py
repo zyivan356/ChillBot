@@ -1,10 +1,11 @@
 import discord
 from discord import utils
+import os
 
 
 #config
 
-TOKEN = 'ODU3NTcyMDc4NzU5NTc1NjAy.YNRiPA.IBmR7In2fLzWtkH1zuBriVRGRJ4'
+TOKEN = os.environ.get('TOKEN')
 
 POST_ID = 857600054323445781
 
@@ -22,7 +23,7 @@ ROLES = {
 
 EXCROLES = ()
 
-MAX_ROLES_PER_USER = 1
+MAX_ROLES_PER_USER = os.environ.get('MAX_ROLES_PER_USER')
 
 #script
 
